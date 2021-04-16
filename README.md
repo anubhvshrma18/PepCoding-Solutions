@@ -1,5 +1,5 @@
 # PepCoding-Practice
-This repository contains the C++ solutions present on [PepCoding](https://www.pepcoding.com/resources/online-java-foundation)
+This repository contains the [PepCoding](https://www.pepcoding.com/resources/online-java-foundation) C++ solutions.
 
 All the codes are working fine. If you do have any suggestions or improvements kindly create an issue and pull request after that.
 
