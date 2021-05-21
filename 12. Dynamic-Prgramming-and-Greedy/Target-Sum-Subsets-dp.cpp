@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//tabulation
+//tabulation (bottom-up)
 bool targetSumSubset(int *arr,int n,int tar,int sum){
     int dp[n+1][tar+1];
     for(int i=0;i<=n;i++){
