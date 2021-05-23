@@ -1,7 +1,10 @@
+// K Transactions
+
 #include <bits/stdc++.h>
 using namespace std;
 
 int kTrans(int *arr, int n,int k){
+	if(k>n){return 0;}
 	int dp[k+1][n];
 	for(int i=0;i<=k;i++){
 		int mx=INT_MIN;
