@@ -1,11 +1,13 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <stack>
+#include <vector>
 
 using namespace std;
 
 struct Node
 {
     int data;
-    vector<Node*> children;
+    vector<Node *> children;
 };
 
 Node *construct(int *arr, int n)
@@ -44,10 +46,10 @@ Node *construct(int *arr, int n)
     return root;
 }
 
-void levelOrderLinewise(Node* &node)
+void levelOrderLinewise(Node *&node)
 {
-    stack<Node*> main;
-    stack<Node*> child;
+    stack<Node *> main;
+    stack<Node *> child;
 
     int level = 1;
     main.push(node);
@@ -69,7 +71,7 @@ void levelOrderLinewise(Node* &node)
 
         else
         {
-            for (int i = rem->children.size()-1; i >= 0; i--)
+            for (int i = rem->children.size() - 1; i >= 0; i--)
             {
                 child.push(rem->children[i]);
             }
@@ -78,8 +80,8 @@ void levelOrderLinewise(Node* &node)
         if (main.size() == 0)
         {
             main = child;
-            stack<Node*> x;
-            child=x;
+            stack<Node *> x;
+            child = x;
             level++;
             cout << endl;
         }
