@@ -1,29 +1,29 @@
 #include "bits/stdc++.h"
 using namespace std;
 
-int longestKSubstr(string s, int k) {
-    // your code here
+
+int check(string &s,int k){
     int i=-1;
     int j=-1;
-    int ans=-1;
+    int ans=0;
     int n=s.length();
+    if(n==0){
+        return 0;
+    }
     map<char,int> mp;
     while(i < n-1){
-        // cout << n << endl;
+        // acquire;
         while(i < n-1){
             i++;
             mp[s[i]]++;
-            
-            // cout << "ans" << endl;
-            
-            if(mp.size()==k){
-                ans=max(ans,i-j);
+            if(mp.size()<=k){
+                ans+=(i-j);
             }
-            else if(mp.size()>k){
+            else {
                 break;
             }
         }
-        while(j<i){
+        while(j<i && mp.size()>k){
             j++;
             if(mp[s[j]]==1){
                 mp.erase(s[j]);
@@ -33,15 +33,17 @@ int longestKSubstr(string s, int k) {
             }
             
             if(mp.size()==k){
-                break;
+                ans+=(i-j);
             }
         }
     }
     
     
-    // cout << " a" << endl;
-    
     return ans;
+}
+
+int longestKSubstr(string s, int k) {
+    return check(s,k)-check(s,k-1);
 }
 
 int main(){
