@@ -1,22 +1,23 @@
-#include "bits/stdc++.h"
+#include<bits/stdc++.h>
 using namespace std;
 
-int longestKSubstr(string s, int k) {
-    // your code here
+
+int lengthOfLongestSubstringKDistinct(string &s, int k) {
+        // write your code here
     int i=-1;
     int j=-1;
-    int ans=-1;
+    int ans=0;
     int n=s.length();
+    if(n==0){
+        return 0;
+    }
     map<char,int> mp;
     while(i < n-1){
-        // cout << n << endl;
+        // acquire;
         while(i < n-1){
             i++;
             mp[s[i]]++;
-            
-            // cout << "ans" << endl;
-            
-            if(mp.size()==k){
+            if(mp.size()<=k){
                 ans=max(ans,i-j);
             }
             else if(mp.size()>k){
@@ -32,7 +33,7 @@ int longestKSubstr(string s, int k) {
                 mp[s[j]]--;
             }
             
-            if(mp.size()==k){
+            if(mp.size()>=k){
                 break;
             }
         }
@@ -44,8 +45,11 @@ int longestKSubstr(string s, int k) {
     return ans;
 }
 
+
+
 int main(){
-    string s;cin>>s;
+    string s;
+    cin >> s;
     int k;cin>>k;
-    cout << longestKSubstr(s,k) << endl;
+    cout << lengthOfLongestSubstringKDistinct(s,k) << endl;
 }
