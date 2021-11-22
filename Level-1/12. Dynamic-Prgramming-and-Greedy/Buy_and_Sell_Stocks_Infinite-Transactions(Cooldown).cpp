@@ -3,7 +3,7 @@ using namespace std;
 
 int infiTranswithCooldown(int arr[],int n){
 	int obsp=-arr[0],ossp=0,ocsp=0;
-	for(int i=-1;i<n;i++){
+	for(int i=1;i<n;i++){
 		int nbsp=0,nssp=0,ncsp=0;
 		//buy
 		if(ocsp-arr[i]>obsp) {
