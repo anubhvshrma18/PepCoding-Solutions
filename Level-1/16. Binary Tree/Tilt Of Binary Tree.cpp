@@ -1,6 +1,3 @@
-//
-// Created by anubhav on 4/13/2021.
-//
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -341,6 +338,4 @@ int main(){
 
     Node* root=construct(v);
     cout << tilt(root);
- 
-
 }
